@@ -1,0 +1,47 @@
+{
+  "name": "template",
+  "private": true,
+  "version": "1.0.0",
+  "type": "module",
+  "scripts": {
+    "moon": "node node_modules/moon-style/dist/moon.js",
+    "moon-purge": "node node_modules/moon-style/dist/purge.js",
+    "build": "yarn moon-purge & vite build",
+    "dev": "start /B yarn moon && vite --host",
+    "start": "yarn moon & vite --host",
+    "serve": "yarn build && vite preview --host --port 2762",
+    "icons": "node ./Scripts/Icons.mjs",
+    "icons-remover": "node ./Scripts/Icons-remover.mjs",
+    "android": "yarn build && npx cap sync android && npx cap open android"
+  },
+  "dependencies": {
+    "date-fns": "^3.6.0",
+    "eze-link": "^0.1.0",
+    "eze-services": "^0.9.3",
+    "eze-spark": "^0.1.0",
+    "eze-utils": "^0.0.4",
+    "jwt-decode": "^4.0.0",
+    "moment": "^2.30.1",
+    "moon-style": "^0.0.76",
+    "node-forge": "^1.3.1",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "react-qr-reader": "^3.0.0-beta-1",
+    "react-router-dom": "^6.26.1"
+  },
+  "devDependencies": {
+    "@types/react": "^18.3.5",
+    "@types/react-dom": "^18.3.0",
+    "@types/react-qr-reader": "^2.1.7",
+    "@types/react-router-dom": "^5.3.3",
+    "@typescript-eslint/eslint-plugin": "^8.4.0",
+    "@typescript-eslint/parser": "^8.4.0",
+    "@vitejs/plugin-react": "^4.3.1",
+    "eslint": "^9.9.1",
+    "eslint-plugin-react-hooks": "^4.6.2",
+    "eslint-plugin-react-refresh": "^0.4.11",
+    "fs": "^0.0.1-security",
+    "typescript": "^5.5.4",
+    "vite": "^5.4.3"
+  }
+}

@@ -1,0 +1,501 @@
+{
+  "$schema": "./node_modules/moon-style/dist/moon.config.schema.json",
+  "useStaticNumbers": false,
+  "useJit": true,
+  "projectDir": "src",
+  "content": ["src/**/*.{html,js,jsx,tsx}"],
+  "colors": {
+    "options": {
+      "*": {
+        "props": ["bg", "border", "text", "fill", "stroke"]
+      }
+    },
+    "staticColors": {
+      "red": "#f85149",
+      "light-red": "#fff5f5",
+      "orange": "#ffa657",
+      "sea": "#2f81f7",
+      "old-green": "#3fb950",
+      "green": "#00a65a",
+      "light-green": "#7ee787",
+      "cyan": "#63cfc9",
+      "nice": "#83d6e1",
+      "cute": "#a3e4cb",
+      "white": "#ffffff",
+      "black": "#000000",
+      "error": "#f85149",
+      "info": "#2f81f7",
+      "purple-two": "#7551ff",
+      "purple": "#a55cf8",
+      "primary": "#18078f",
+      "secondary": "#363636",
+
+      "primary-hover": "#2f81f7",
+      "primary-active": "#2f81f7",
+      "primary-border": "#fa5f55",
+      "primary-light": "#2f81f7",
+      "grass": "#3fb950",
+      "light-grass": "#3fb950",
+      "light-blue": "#5bc0de",
+
+      "secondary-hover": "#363636",
+      "secondary-active": "#363636",
+      "secondary-border": "#fa5f55",
+      "secondary-light": "#363636",
+
+      "night": "#626262",
+      "night-hover": "#393939",
+      "night-active": "#27272a",
+      "night-border": "#fa5f55",
+      "night-light": "#fff5f5",
+
+      "warning": "#fcd34d",
+      "warning-hover": "#f59e0b",
+      "warning-border": "#b45309",
+      "warning-light": "#fffbeb",
+
+      "success": "#86efac",
+      "success-hover": "#22c55e",
+      "success-border": "#15803d",
+      "success-light": "#86efac",
+
+      "owl-border": "#626262",
+
+      "shark-border-old": "#e8e8e8",
+
+      "owl-disabled": "#e8e8e8",
+
+      "shark-disabled": "#f6f6f6",
+      "goat-icon": "#a5a5b2",
+
+      "new": "#fa5f55",
+      "delivered": "#22c55e",
+      "pinned": "#f59e0b",
+      "prepared": "#7b61ff",
+      "received": "#42b8dd",
+
+      "link": "#1ea7fd"
+    },
+    "themes": {
+      "light": {
+        "main": "#f4f7fe",
+        "prim": "#ffffff",
+        "king": "#f9f9fa",
+        "prince": "#e0e0e0",
+        "lord": "#909090",
+        "throne": "#e0e0e0",
+        "hoverd": "#f0f0f0",
+        "bord": "#8b949e",
+        "shark-border": "#e0e5f2",
+        "goat-border": "#e2e8f0",
+
+        "primary": "#7F12AC",
+        "primary-hover": "#3b2e96",
+        "primary-active": "#251b66",
+        "primary-border": "#160e4b",
+        "primary-light": "#18078f",
+
+        "owl": "#1b254b",
+        "shark": "#9faec0",
+        "goat-old": "#8c8c97",
+        "goat": "#a3aed0",
+        "dolphin": "#838391",
+        "whale": "#f6f6f6",
+
+        "icon": "#a5a5b2",
+
+        "sky": "#d9fffd",
+        "sea": "#84dad6",
+        "danger": "#f85149",
+        "outline": "#ffffff"
+      },
+      "dark": {
+        "red": "#fc928c",
+        "green": "#1bd69a",
+
+        "main": "#2d3436",
+        "prim": "#39434a",
+        "king": "#404b52",
+        "prince": "#474d57",
+        "throne": "#474d57",
+        "lord": "#f2f2f2",
+
+        "primary": "#00d4ff",
+        "goat": "#fdaa4b",
+        "owl": "#ffffff",
+        "shark": "#d3d9df",
+        "dolphin": "#474d57",
+
+        "sky": "#1a1c24",
+        "sea": "#f78da7",
+        "hoverd": "#33393f",
+        "bord": "#3a404b",
+
+        "primary-hover": "#87ceff",
+        "primary-active": "#e07a8b",
+        "primary-border": "#b36276",
+        "primary-light": "#f7e2d7",
+
+        "night": "#3a404b",
+        "night-hover": "#434d57",
+        "night-active": "#404b52",
+        "night-border": "#00d4ff40",
+        "night-light": "#d3d9df",
+
+        "owl-border": "#e0e0e0",
+        "shark-border": "#606264",
+        "goat-icon": "#fdaa4b",
+
+        "outline": "#2d3436"
+      },
+      "neo": {
+        "main": "#273c5a",
+        "prim": "#34495e",
+        "primary": "#e74c3c",
+        "primary-hover": "#f9715e",
+        "primary-active": "#c23929",
+        "primary-border": "#9b291c",
+        "primary-light": "#f9dedc",
+        "throne": "#242a38",
+        "king": "#303b4a",
+        "prince": "#808aaa",
+        "lord": "#f0f0f0",
+        "sky": "#00173f",
+        "sea": "#00bfff",
+        "hoverd": "#293443",
+        "bord": "#1e2942",
+        "owl": "#ffffff",
+        "shark": "#d0dcef",
+        "goat": "#e74c3c",
+        "dolphin": "#f0f0f0",
+        "danger": "#c23929",
+        "outline": "#273c5a",
+
+        "whale": "#303b4a",
+
+        "night": "#1e2942",
+        "night-hover": "#303b4a",
+        "night-active": "#242a38",
+        "night-border": "#00bfff40",
+        "night-light": "#d0dcef",
+
+        "owl-border": "#e0e0e0",
+        "shark-border": "#34495e",
+        "goat-icon": "#e74c3c"
+      },
+      "horizon-dark": {
+        "main": "#0b1437",
+        "prim": "#111c44",
+        "primary": "#7551ff",
+        "primary-hover": "#8a70f2",
+        "primary-active": "#5c3be0",
+        "primary-border": "#4326b8",
+        "primary-light": "#a591f6",
+        "throne": "#1b254b",
+        "king": "#1f294f",
+        "prince": "#393c4a",
+        "lord": "#9099bc",
+        "sky": "#121d2f",
+        "sea": "#1f6feb",
+        "hoverd": "#171b20",
+        "bord": "#8b949e",
+        "owl": "#ffffff",
+        "shark": "#a0aec0",
+        "goat": "#1f6feb",
+        "dolphin": "#e0e0e0",
+        "danger": "#f85149",
+        "outline": "#0b1437",
+
+        "whale": "#161b22",
+
+        "night": "#bbb0b0",
+        "night-hover": "#a09d9d",
+        "night-active": "#5e5e60",
+        "night-border": "#fa5f55",
+        "night-light": "#fff5f5",
+
+        "owl-border": "#e8e8e8",
+        "shark-border": "#313960",
+        "goat-border": "#1f294f",
+
+        "owl-disabled": "#30363d",
+        "shark-disabled": "#f6f6f6",
+        "goat-icon": "#a5a5b2"
+      }
+    }
+  },
+  "styles": [
+    {
+      "props": { "padding": "p", "margin": "m", "gap": "gap", "inset": "inset", "top": "top", "left": "left", "right": "right", "bottom": "bottom" },
+      "variableName": "spacing",
+      "values": {
+        "0": "0",
+        "xs": "2px",
+        "sm": "4px",
+        "md": "8px",
+        "lg": "10px",
+        "xl": "12px",
+        "2x": "16px",
+        "3x": "20px",
+        "4x": "26px",
+        "5x": "32px",
+        "6x": "40px"
+      }
+    },
+    {
+      "props": { "width": "w", "height": "h", "size": "size" },
+      "variableName": "size",
+      "values": {
+        "0": "0",
+        "20": "20px",
+        "26": "26px",
+        "32": "32px",
+        "40": "40px",
+        "80": "80px",
+        "100": "100px",
+        "120": "120px",
+        "160": "160px",
+        "200": "200px",
+        "260": "260px",
+        "320": "320px",
+        "400": "400px"
+      }
+    },
+    {
+      "props": { "border-radius": "round" },
+      "variableName": "round",
+      "values": {
+        "unset": "unset",
+        "0": "0px",
+        "xs": "4px",
+        "sm": "8px",
+        "md": "12px",
+        "lg": "16px",
+        "xl": "20px",
+        "full": "999px"
+      }
+    },
+    {
+      "props": { "font-weight": "weight" },
+      "variableName": "weight",
+      "values": {
+        "normal": 400,
+        "bold": 700
+      }
+    },
+    {
+      "props": { "line-height": "line-h" },
+      "variableName": "line-h",
+      "values": {
+        "normal": 1.5,
+        "dense": 1.25,
+        "loose": 2
+      }
+    },
+    {
+      "props": { "font-family": "font" },
+      "variableName": "font",
+      "values": {
+        "sans": "-apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, Helvetica, Arial, sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\"",
+        "serif": "Georgia, Cambria, \"Times New Roman\", Times, serif",
+        "mono": "Menlo, Monaco, Consolas, \"Liberation Mono\", \"Courier New\", monospace"
+      }
+    },
+    {
+      "props": { "box-shadow": "shadow" },
+      "variableName": "shadow",
+      "values": {
+        "sm": "0 0 2px rgba(0, 0, 0, 0.1)",
+        "md": "0 0 4px rgba(0, 0, 0, 0.1)",
+        "lg": "0 0 8px rgba(15, 3, 93, 0.16)",
+        "xl": "0 0 16px rgba(0, 0, 0, 0.2)",
+        "2x": "0 0 24px rgba(0, 0, 0, 0.2)",
+        "bottom": "0 3px 8px rgba(0, 0, 0, 0.1)",
+        "top": "0 -3px 6px rgba(0, 0, 0, 0.1)",
+        "top-sm": "0 -2px 4px rgba(0, 0, 0, 0.1)",
+        "focus": "0px 0px rgba(32, 211, 238,0.1)",
+        "error": "0px 0px rgba(231, 53, 60,0.1)",
+        "none": "none"
+      }
+    },
+    {
+      "props": { "font-size": "text" },
+      "variableName": "text",
+      "values": {
+        "xs": "8px",
+        "sm": "10px",
+        "md": "12px",
+        "lg": "14px",
+        "xl": "16px",
+        "2x": "18px",
+        "3x": "20px",
+        "4x": "22px",
+        "5x": "24px",
+        "6x": "26px"
+      }
+    },
+    {
+      "props": { "border-width": "border" },
+      "variableName": "border",
+      "values": {
+        "none": "0px",
+        "thin": "1px",
+        "thick": "2px"
+      }
+    },
+    {
+      "props": { "border-style": "border" },
+      "variableName": "border",
+      "values": {
+        "none": "none",
+        "solid": "solid",
+        "dashed": "dashed",
+        "dotted": "dotted"
+      }
+    },
+    {
+      "props": { "transition": "transition" },
+      "variableName": "transition",
+      "values": {
+        "none": "none",
+        "100": "all 100ms ease-in-out",
+        "200": "all 200ms ease-in-out",
+        "300": "all 300ms ease-in-out",
+        "400": "all 400ms ease-in-out",
+        "500": "all 500ms ease-in-out",
+        "600": "all 600ms ease-in-out"
+      }
+    },
+    {
+      "props": { "z-index": "z" },
+      "variableName": "z",
+      "values": {
+        "0": "0",
+        "10": "1",
+        "20": "2",
+        "30": "3",
+        "40": "4",
+        "50": "5",
+        "60": "6",
+        "70": "7",
+        "80": "8",
+        "90": "9",
+        "100": "10"
+      }
+    },
+    {
+      "props": { "display": "display" },
+      "variableName": "display",
+      "values": {
+        "none": "none",
+        "block": "block",
+        "inline-block": "inline-block",
+        "inline": "inline",
+        "flex": "flex",
+        "inline-flex": "inline-flex",
+        "grid": "grid",
+        "inline-grid": "inline-grid",
+        "table": "table",
+        "table-row": "table-row",
+        "table-cell": "table-cell",
+        "list-item": "list-item"
+      }
+    },
+
+    {
+      "props": { "justify-content": "content" },
+      "variableName": "content",
+      "values": {
+        "start": "flex-start",
+        "end": "flex-end",
+        "center": "center",
+        "between": "space-between",
+        "around": "space-around",
+        "evenly": "space-evenly"
+      }
+    },
+    {
+      "props": { "blur": "blur", "backdrop-blur": "backdrop-blur" },
+      "variableName": "blur",
+      "values": {
+        "0": "0px",
+        "xs": "2px",
+        "sm": "4px",
+        "md": "8px",
+        "lg": "10px",
+        "xl": "12px",
+        "2x": "16px",
+        "3x": "20px",
+        "4x": "26px",
+        "5x": "32px",
+        "6x": "40px"
+      }
+    },
+    {
+      "props": { "opacity": "opacity" },
+      "variableName": "opacity",
+      "values": {
+        "0": "0",
+        "xs": "0.05",
+        "sm": "0.1",
+        "md": "0.2",
+        "lg": "0.3",
+        "xl": "0.4",
+        "2x": "0.5",
+        "3x": "0.6",
+        "4x": "0.7",
+        "5x": "0.8",
+        "6x": "0.9",
+        "100": "1"
+      }
+    },
+    {
+      "props": {
+        "brightness": "brightness",
+        "contrast": "contrast",
+        "saturate": "saturate",
+        "invert": "invert",
+        "sepia": "sepia",
+        "hue-rotate": "hue-rotate"
+      },
+      "variableName": "filter",
+      "values": {
+        "0": "0",
+        "xs": "0.05",
+        "sm": "0.1",
+        "md": "0.2",
+        "lg": "0.3",
+        "xl": "0.4",
+        "2x": "0.5",
+        "3x": "0.6",
+        "4x": "0.7",
+        "5x": "0.8",
+        "6x": "0.9",
+        "100": "1"
+      }
+    },
+    {
+      "props": { "object-fit": "object-fit" },
+      "variableName": "object-fit",
+      "values": {
+        "contain": "contain",
+        "cover": "cover",
+        "fill": "fill",
+        "none": "none",
+        "scale-down": "scale-down"
+      }
+    }
+  ],
+  "screens": {
+    "xs": "0px",
+    "sm": "600px",
+    "md": "960px",
+    "lg": "1280px",
+    "xl": "1920px",
+    "phone": "0px",
+    "tablet": "600px",
+    "desktop": "960px",
+    "wide": "1280px",
+    "ultra": "1920px"
+  }
+}

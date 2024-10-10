@@ -1,0 +1,280 @@
+table {
+  border-collapse: separate;
+  text-align: center;
+  color: var(--owl);
+  width: 100%;
+  opacity: 1;
+  border-spacing: 5px;
+  border-spacing: 0;
+  transform: translateY(0px) scaleY(1);
+  padding: var(--spacing-md);
+  opacity: 1;
+  transition:
+    opacity 0.2s ease-out,
+    transform 0.2s ease-out;
+  background-color: var(--prim);
+  padding: 0;
+  padding-top: var(--spacing-md);
+  border-radius: var(--round-lg);
+  /* background-color: var(--prim);
+  box-shadow: var(--shadow-md); */
+}
+
+[data-fade="true"] {
+  animation: table-fade 0.2s ease-in forwards;
+}
+
+td,
+th {
+  user-select: all !important;
+  padding: var(--spacing-md);
+}
+
+/* tr {
+  background-color: transparent;
+} */
+tr:nth-child(odd) {
+  background-color: var(--king);
+}
+
+tr {
+  /* white-space: nowrap;
+  text-overflow: ellipsis; */
+  transition: background-color 0.1s ease-out;
+}
+
+tbody td {
+  /* padding: var(--spacing-md); */
+  /* overflow: hidden; */
+  /* text-overflow: ellipsis; */
+  /* white-space: wrap;
+  max-width: 200px; */
+  /* min-width: 100px;
+  min-width: max-content; */
+
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 200px;
+}
+
+tbody .full-td {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 200px;
+}
+tbody .details-td {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 200px;
+}
+
+/* td:has([has-popup]) {
+  overflow: unset !important;
+  position: relative;
+}
+td:has([has-popup])::after {
+  content: "";
+  position: absolute;
+  background-color: var(--primary) !important;
+  inset: 0;
+} */
+
+td:has([has-popup]) svg {
+  /* fill: var(--primary) !important;
+  fill: var(--white) !important; */
+}
+
+tbody tr:hover {
+  background-color: var(--main);
+}
+.td-options {
+  opacity: 0;
+  top: auto;
+  /* pointer-events: none; */
+  left: -40px;
+  transition:
+    opacity 0.1s ease-out,
+    left 0.1s ease-out,
+    background-color 0.1s ease-out;
+}
+tbody tr:hover .td-options,
+.td-options[has-popup],
+.td-options:hover {
+  opacity: 1;
+  left: 0;
+  background-color: var(--main);
+}
+.td-options[has-popup] {
+  background-color: var(--main);
+  z-index: 100;
+}
+/* tbody tr:last-child {
+  border-bottom-left-radius: var(--round-md);
+  border-bottom-right-radius: var(--round-md);
+  background-color: transparent;
+} */
+
+thead {
+  position: sticky;
+  z-index: 101;
+  top: calc(var(--spacing-md));
+  color: var(--shark);
+}
+thead::before {
+  content: "";
+  inset: 0;
+  top: -8px;
+  background-color: var(--prim);
+  position: absolute;
+  z-index: -1;
+  border-bottom: solid 1px var(--goat-border);
+}
+/* thead {
+  position: sticky;
+  z-index: 101;
+  top: calc(var(--spacing-md));
+  color: var(--shark);
+}
+thead::before {
+  content: "";
+  inset: 0;
+  top: -8px;
+  background-color: transparent;
+  position: absolute;
+  z-index: -1;
+}
+thead::after {
+  content: "";
+  position: absolute;
+  inset: -1px 6px;
+  z-index: -1;
+  border-radius: var(--round-sm);
+  border: solid 2px var(--goat);
+  background-color: var(--king);
+} */
+thead tr {
+  background-color: transparent !important;
+  padding-inline: 10px;
+}
+thead th {
+  font-weight: var(--font-bold);
+  background-color: transparent !important;
+  padding: 0 var(--spacing-lg);
+  font-size: var(--text-lg);
+}
+
+@keyframes table-fade {
+  0% {
+    opacity: 0.5;
+    transform: translateY(10px);
+    transform: translateY(2px) scaleY(0.98);
+  }
+  70% {
+    transform: translateY(0px) scaleY(1);
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.toggle-cols-button::before {
+  content: "";
+  background-color: #fff;
+  background-color: #f9f9fa;
+  width: 40px;
+  height: 30px;
+  position: absolute;
+  z-index: -1;
+  top: 0;
+  right: 0;
+  left: 0;
+  margin-right: -50px;
+}
+
+@media print {
+  table {
+    page-break-inside: avoid;
+    box-shadow: none;
+    border-spacing: 0;
+    color: #000;
+    border-bottom: solid 1px #000;
+    border-left: solid 1px #000;
+    padding: 0px;
+    width: calc(100% - 4px);
+    border-radius: 0 !important;
+  }
+  thead::before,
+  thead::after {
+    display: none;
+  }
+  thead {
+    position: static;
+  }
+  th {
+    padding-block: var(--spacing-sm) !important;
+  }
+  th,
+  td {
+    border-right: solid 1px #000;
+    border-top: solid 1px #000;
+  }
+}
+
+/*  */
+.table-status {
+  border-radius: var(--round-sm);
+  font-size: var(--text-sm);
+  padding: var(--spacing-md) var(--spacing-lg);
+  background-color: var(--status-clr);
+  color: var(--status-text-clr);
+  --status-text-clr: var(--white);
+}
+
+/* Employess */
+.ACTIVE {
+  --status-clr: var(--primary);
+}
+.SUSPENDED {
+  --status-clr: var(--red);
+}
+.ARCHIVED {
+  --status-clr: var(--shark);
+  --status-text-clr: var(--white);
+}
+/* Employess */
+
+/* Transactions */
+.Processed {
+  --status-clr: var(--primary);
+}
+.Draft {
+  --status-clr: var(--shark);
+  --status-text-clr: var(--white);
+}
+.Validated {
+  --status-clr: var(--cyan);
+  --status-text-clr: var(--white);
+}
+.Rejected {
+  --status-clr: var(--red);
+}
+.Failed {
+  --status-clr: var(--red);
+}
+.Unknown {
+  --status-clr: var(--prince);
+  --status-text-clr: var(--owl);
+}
+/* Transactions */
+
+/* Oil Transactions */
+.Purchase {
+  --status-clr: var(--primary);
+}
+.Cash {
+  --status-clr: var(--red);
+}
+/* Oil Transactions */

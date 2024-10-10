@@ -1,0 +1,287 @@
+@layer elements {
+  .icon-input {
+    outline: none;
+    fill: var(--shark);
+    border: var(--element-border);
+    overflow: hidden;
+    display: flex;
+  }
+  
+  .icon-input input {
+    background-color: transparent;
+    /* width: calc(100% - 30px); */
+    /* margin-inline-end: auto; */
+    width: 100%;
+    line-height: 48px !important;
+    padding: 0 var(--spacing-3x);
+    /* border-radius: var(--round-lg); */
+  }
+
+  .input-default {
+    background-color: var(--king);
+  }
+  .input-bordered {
+    background-color: var(--throne);
+    border-color: var(--shark);
+  }
+  .input-ghost {
+    background-color: var(--dark);
+  }
+  .input-search {
+    background-color: var(--prim);
+    border-color: var(--shark-border);
+    transition: all 0.1s ease-in;
+    display: flex;
+    padding-inline: var(--spacing-3x);
+  }
+  .input-search:focus-within {
+    border-color: var(--primary);
+  }
+  .input-outline {
+    background-color: transparent;
+    background-color: var(--outline);
+    border-color: var(--shark-border);
+    color: var(--owl);
+  }
+  .input-outline::placeholder {
+    color: var(--goat);
+  }
+  /* .input-outline:focus-within {
+    border-color: var(--primary);
+  } */
+
+  .input-checkbox {
+    display: flex;
+    flex-direction: row-reverse;
+    padding-block: var(--spacing-sm);
+    cursor: pointer;
+    padding-top: 8px !important;
+    padding-inline: var(--spacing-xl);
+    gap: var(--spacing-2x);
+  }
+  .input-checkbox span{
+  }
+  .input-checkbox input {
+    pointer-events: none;
+    height: 20px;
+    width: 20px;
+    accent-color: var(--primary) !important;
+    border-radius: 4px;
+    vertical-align: middle;
+  }
+  /* chagne the checkbox style */
+  .input-checkbox input:after {
+    content: "";
+    background-color: var(--white);
+    border-radius: 50%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: red;
+  }
+  .input-checkbox input:checked {
+    background-color: var(--primary) !important;
+  }
+
+  /* States */
+  /* export type InputState = "default" | "error" | "success"; */
+
+  [data-element-state="error"] {
+    border-color: var(--error);
+    fill: var(--error) !important;
+  }
+  [data-element-state="success"] {
+    border-color: var(--success);
+    fill: var(--success);
+  }
+}
+
+/* new */
+.last-4digits-container {
+  border-radius: var(--round-lg);
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  border: solid 1px var(--shark-border);
+}
+.last-4digits-container input{
+  padding-block: var(--spacing-xl);
+  transform: translateX(-10px);
+}
+.last-4digits-container input::placeholder {
+  font-size: var(--text-md);
+  color: var(--shark);
+}
+
+.input-date {
+  position: relative;
+  height: 48px;
+  direction: rtl;
+  max-width: 136px;
+  max-width: 190px;
+}
+.input-date input {
+  margin: 0;
+}
+
+.input-date svg {
+  position: absolute;
+  pointer-events: none;
+  inset-inline-start: 10px;
+}
+
+.input-date input::-webkit-calendar-picker-indicator {
+  cursor: pointer;
+  /* position: absolute; */
+  height: 20px;
+  width: 20px;
+  inset-inline-start: 10px;
+  opacity: 0;
+}
+
+/* new */
+/* disable input arrow for type number */
+
+input[type="password"]{
+  direction: ltr;
+}
+.trans-amount input{
+  letter-spacing: 2.5px;
+}
+
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+}
+
+/* slider */
+.slider {
+  -webkit-appearance: none;
+  appearance: none;
+  border: none;
+  outline: none;
+  background: linear-gradient(270deg, var(--nice) 0%, #f000 calc(var(--value) * 2.5%), var(--white) calc(var(--value) * 1%), var(--white) 100%);
+  border-radius: 20px;
+  box-shadow: 0px 0px 3px rgba(0, 0, 0, 0.2);
+}
+
+/* customize the appearance of the thumb */
+.slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  height: 20px;
+  width: 20px;
+  background-color: white;
+  border-radius: 50%;
+  cursor: pointer;
+  box-shadow: 0px 0px 3px rgba(0, 0, 0, 0.5);
+}
+
+/* customize the appearance of the thumb for Firefox */
+.slider::-moz-range-thumb {
+  height: 20px;
+  width: 20px;
+  background: var(--cyan);
+  border-radius: 50%;
+  cursor: pointer;
+  box-shadow: 0px 0px 3px rgba(0, 0, 0, 0.5);
+}
+
+/* Todo Remove this */
+
+/* .icon-input {
+  position: relative;
+}
+.icon-input input {
+  z-index: 1;
+} */
+
+/* [data-lable]::after {
+  content: attr(data-lable);
+  position: absolute;
+  transition: all 0.15s ease-in;
+  border-radius: var(--round-sm) var(--round-sm) 0 0 !important;
+  inset-inline-start: -2px;
+  padding-inline: var(--spacing-lg);
+  z-index: 0;
+  width: 0;
+  min-width: 120px;
+  overflow: hidden;
+  transform: translateY(-100%);
+} */
+
+/* [data-lable]::after {}
+.icon-input:has(input:not(:placeholder-shown))[data-lable]::after,
+.icon-input:has(input:focus)[data-lable]::after {
+  transform: translateY(-80%);
+} */
+
+/* .input-label {
+    position: absolute;
+    transition: all 0.15s ease-in;
+    border-radius: var(--round-sm) var(--round-sm) 0 0 !important;
+    inset-inline-start: -2px;
+    padding-inline: var(--spacing-lg);
+    z-index: 0;
+    min-width: 120px;
+    background-color: inherit;
+}
+.icon-input:has(input:not(:placeholder-shown))  .input-label,
+.icon-input:has(input:focus)  .input-label {
+  transform: translateY(-80%);
+  } */
+
+  /* Files */
+  .image-controller-container{
+    gap: var(--spacing-lg);
+    background-color: var(--orange);
+    border-radius: var(--round-md);
+    display: flex;
+  }
+  .image-controller-container img{
+    /* height: 150px; */
+    width: 100%;
+    aspect-ratio: 2/1;
+    object-fit:cover;
+    object-fit:contain;
+    border-radius: var(--round-sm);
+  }
+  .image-controller-container input{
+    display: none;
+  }
+  
+  .image-controller-container.image-contrller-big {
+    /* flex-grow: 1; */
+    flex-direction: column;
+    align-items: center;
+    min-height: 100px;
+    max-height: 150px;
+  }
+  .image-controller-container.image-contrller-big img{
+    max-height: 146px;
+  }
+  .image-controller-container.image-contrller-small {
+    /* flex-grow: 1; */
+    flex-direction: column;
+    align-items: center;
+    max-height: 50px ;
+    max-width: 160px ;
+    object-fit: contain;
+  }
+  .image-controller-container.image-contrller-view {
+    /* flex-grow: 1; */
+    flex-direction: column;
+    height: 50px ;
+    width: 60px ;
+    object-fit: cover;
+    background-color: var(--king);
+  }
+
+  /*  */
+  .images-base64-default{
+    max-height: 180px;
+    object-fit: contain;
+    width: fit-content;
+    max-width: 100%;
+    border-radius: var(--round-lg);
+  } 

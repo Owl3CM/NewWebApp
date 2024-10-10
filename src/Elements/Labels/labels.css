@@ -1,0 +1,90 @@
+@layer elements {
+  .label {
+    /* color: var(--owl); */
+    font-size: var(--text-lg);
+  }
+
+  .icon-label {
+    display: flex;
+    gap: var(--spacing-md);
+    padding: var(--spacing-md) var(--spacing-2x);
+    fill: var(--shark);
+    border: var(--element-border);
+  }
+
+  [data-icon-position="start"] {
+    flex-direction: row;
+    align-items: center;
+    text-align: end;
+  }
+  [data-icon-position="top"] {
+    flex-direction: column;
+  }
+  [data-icon-position="end"] {
+    flex-direction: row-reverse;
+    align-items: center;
+    gap: var(--spacing-sm);
+    text-align: start;
+  }
+  [data-icon-position="bottom"] {
+    flex-direction: column-reverse;
+    gap: var(--spacing-sm);
+  }
+
+  .icon-label-nice {
+    fill: var(--nice);
+  }
+
+  .icon-label-test {
+    fill: var(--orange);
+    color: var(--orange);
+  }
+  .icon-label-test :nth-child(2) {
+    text-align: center;
+    flex-grow: 1;
+  }
+
+  .icon-label-info {
+    border-color: var(--info);
+    align-items: center;
+    width: fit-content;
+    min-width: 100px;
+  }
+
+  /* States */
+  /* type LabelState = "idle" | "error" | "success" | "warning" | "info"|"disabled"; */
+  [data-label-state="error"] {
+    color: var(--owl);
+    fill: var(--error);
+  }
+  [data-label-state="success"] {
+    color: var(--owl);
+    fill: var(--success);
+  }
+  [data-label-state="warning"] {
+    color: var(--owl);
+    fill: var(--warning);
+  }
+  [data-label-state="info"] {
+    color: var(--owl);
+    fill: var(--info);
+  }
+  [data-label-state="disabled"] {
+    color: var(--owl);
+    fill: var(--red);
+  }
+}
+
+
+.page-title{
+  
+}
+
+.info-area{
+  background-color: var(--king);
+  min-height: 20px;
+  display: block;
+  width: 100%;
+  padding: var(--spacing-xl);
+  border-radius: var(--spacing-lg);
+}

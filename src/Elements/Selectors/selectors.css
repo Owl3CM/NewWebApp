@@ -1,0 +1,158 @@
+@layer elements {
+  .selector-list-container {
+    width: 100%;
+    pointer-events: none;
+    min-width: 70px !important;
+    line-height: 40px;
+  }
+  .selector {
+    display: flex;
+    gap: 0 !important;
+    /* min-width: max-content; */
+    position: relative;
+    min-width: 120px;
+  }
+  .selector span {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    text-align: start;
+    /* max-width: 100%; */
+  }
+  .selector svg {
+    transition: all 0.2s ease-in-out;
+    width: 20px;
+    margin-right: -28px;
+    fill: var(--goat);
+    transform: rotate(0deg) translateY(-1px);
+    min-width: 30px;
+  }
+  .selector-with-input {
+    display: flex;
+    border: solid 1px var(--shark-border);
+    border-radius: var(--round-lg);
+    background-color: transparent;
+  }
+  .selector-with-input .selector-list-container {
+    width: max-content;
+    min-width: max-content;
+  }
+
+  .selector-with-input .selector::before {
+    content: "";
+    position: absolute;
+    background-color: var(--shark-border);
+    width: 2px;
+    height: 30px;
+    inset-inline-start: 0;
+  }
+  .selector-with-input .selector {
+    background-color: transparent;
+    border-width: 0;
+    padding-inline: var(--spacing-md);
+    border-radius: 0;
+    border-bottom-left-radius: 10.5px;
+    border-top-left-radius: 10.5px;
+    max-width: 50% !important;
+    min-width: 30% !important;
+  }
+  .selector-with-input .selector span {
+    padding-inline-end: 20px;
+    padding-inline-start: 5px;
+  }
+  .selector-with-input .selector svg {
+  }
+
+  .selector-with-input .icon-input {
+    background-color: transparent;
+    padding-inline-end: var(--spacing-md);
+    border-width: 0;
+    border-radius: 0;
+    border-bottom-right-radius: 10.5px;
+    border-top-right-radius: 10.5px;
+    flex-grow: 1 !important;
+  }
+
+  .selector-with-input:focus-within {
+    border-color: var(--goat) !important;
+  }
+  .selector-with-input:focus-within .selector {
+    border-color: var(--goat) !important;
+  }
+
+  .selector[has-popup="true"] svg,
+  [has-popup="true"] > .selector svg {
+    transform: rotate(180deg) translateY(1px);
+    fill: var(--primary) !important;
+  }
+
+  .selector-list {
+    background-color: var(--outline);
+    padding: var(--spacing-md);
+    border-radius: var(--round-lg);
+    gap: var(--spacing-lg);
+    display: flex;
+    flex-direction: column;
+    border: solid 1px var(--shark-border);
+    /* min-height: 40px; */
+    max-height: 40vh;
+  }
+
+  .selector-list-item {
+    font-weight: var(--font-light);
+    background-color: var(--king);
+    padding: 0 var(--spacing-xl);
+    border-radius: var(--round-sm);
+    cursor: pointer;
+    text-align: start;
+    box-shadow: var(--shadow-sm);  
+    transition: all 0.1s ease-in-out;
+    font-size: var(--text-md);
+  }
+  .selector-list-item:hover {
+    background-color: var(--prim);
+    box-shadow: var(--shadow-md);
+  }
+
+  [data-selected-list-item="true"] {
+    background-color: var(--prim) !important;
+    /* border: solid var(--primary) 1px !important ; */
+    color: var(--primary) !important;
+    box-shadow: var(--shadow-md) !important;
+  }
+  [data-list-item-disabled="true"] {
+    background-color: var(--king) !important;
+    /* border-color: var(--primary) ; */
+    color: var(--goat) !important;
+    cursor: not-allowed;
+    opacity: 0.7;
+  }
+}
+
+/* multi */
+.multi-selector {
+  border-radius: var(--round-lg);
+  /* background-color: var(--outline); */
+  /* border: solid 1px var(--shark-border);  */
+  padding: var(--spacing-md);
+}
+.multi-selector input {
+ line-height: 32px;
+  width: clamp(20%, 20%, 100%);
+} 
+
+.selector-list-label {
+  line-height: 20px;
+  display: flex;
+  flex-direction: row;
+  /* align-items: center; */
+  color: var(--white);
+  border-radius: var(--round-sm);
+  padding: var(--spacing-sm) var(--spacing-md);
+  gap: var(--spacing-md);
+  cursor: pointer;
+  background-color: var(--primary);
+}
+.selector-list-label:hover {
+  background-color: var(--primary-hover);
+}

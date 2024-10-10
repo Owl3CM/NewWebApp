@@ -1,0 +1,78 @@
+[data-title]::after {
+  content: attr(data-title);
+  text-align: center;
+  animation: fade-in-top-frame 300ms ease-in-out;
+  font-size: var(--text-xl);
+}
+[data-title="loading"]::after,
+[data-title="logo"]::after {
+  display: none;
+}
+
+@keyframes loading-title {
+  0%,
+  100% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 0.3;
+  }
+}
+
+[data-title] .top-bar-logo {
+  display: none;
+}
+[data-title="logo"] .top-bar-logo {
+  display: flex;
+}
+[data-title="loading"] .top-bar-logo {
+  display: flex;
+  border-radius: var(--round-m);
+  animation: loading-title 1.5s infinite ease-in-out;
+}
+
+[data-back-button="true"] {
+  opacity: 1;
+  transition: all 200ms;
+}
+[data-back-button="false"] {
+  opacity: 0;
+  pointer-events: none;
+}
+/* Prices */
+@layer attributes {
+  .price,
+  .price-full {
+    font-size: 15px;
+  }
+}
+.price {
+  font-weight: 100;
+  font-family: var(--font-light);
+}
+
+[iso-code] ::after {
+ font-size: 12px !important;
+ color: var(--shark);
+}
+
+[iso-code="N/A"] .price::after,
+[iso-code="IQD"].price::after {
+  content: " N/A ";
+}
+[iso-code="IQD"] .price::after,
+[iso-code="IQD"].price::after {
+  content: " د.ع ";
+}
+[iso-code="USD"] .price::after,
+[iso-code="USD"].price::after {
+  content: " $ ";
+}
+/* Prices */
+
+
+.discounted {
+   /* this style is for discount */
+   text-decoration: line-through 1px;
+  color: var(--red);
+}
