@@ -13,6 +13,7 @@ const ar_Builder = {
 const arActions = {
   addDiscounts: "اضافة خصم",
   makeAllAsSeen: "جعل الكل مقروء",
+   submit: "ارسال",
 };
 const ar_Enems = {};
 
@@ -21,7 +22,10 @@ const ar = {
   ...ar_Enems,
   ...arActions,
   item: "مادة",
-  "": "",
+  categoryName: "اسم المجموعة",
+  image: "الصورة",
+  description: "الوصف",
+  name: "الاسم",
 };
 
 const Languages = {
