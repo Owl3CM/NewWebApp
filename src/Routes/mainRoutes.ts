@@ -1,6 +1,7 @@
 import AddCategory from "@/Pages/AddCategory/AddCategoryPage";
 import AddProductsPage from "@/Pages/AddProduct/AddProductPage";
 import AddUser from "@/Pages/AddUser/AddUserPage";
+import CartPage from "@/Pages/Cart/CartPage";
 import Categories from "@/Pages/Categories/CategoriesPage";
 import ProductsPage from "@/Pages/Products/Products";
 import ProductTable from "@/Pages/Products/ProductsTable";
@@ -37,6 +38,11 @@ export const getMainRoutes = () => {
       path: "/products",
       Component: ProductsPage,
       label: "Products",
+    },
+    {
+      path: "/cart",
+      Component: CartPage,
+      label: "Cart",
     },
   ];
 

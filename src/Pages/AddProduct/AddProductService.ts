@@ -38,16 +38,16 @@ export class AddProductService {
       },
     });
 
-    AddProductService.FetchCategories().then((categories) => {
+    this.FetchCategories().then((categories) => {
       this.categoriesHive.setHoney(categories);
     });
   }
 
-  static Create = () => new AddProductService();
-  static async FetchCategories(): Promise<IListOption[]> {
+  async FetchCategories(): Promise<IListOption[]> {
     const data = await Client.categoriesTag.CategoriesPaginator.load();
     return data.map((categoryResponse) => {
       return { value: categoryResponse.id, label: categoryResponse.name };
     });
   }
+  static Create = () => new AddProductService();
 }
