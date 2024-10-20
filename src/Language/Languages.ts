@@ -13,7 +13,8 @@ const ar_Builder = {
 const arActions = {
   addDiscounts: "اضافة خصم",
   makeAllAsSeen: "جعل الكل مقروء",
-   submit: "ارسال",
+  submit: "ارسال",
+  addToBasket: "اضافة الى السلة",
 };
 const ar_Enems = {};
 

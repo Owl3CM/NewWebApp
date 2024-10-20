@@ -2,6 +2,8 @@ import AddCategory from "@/Pages/AddCategory/AddCategoryPage";
 import AddProductsPage from "@/Pages/AddProduct/AddProductPage";
 import AddUser from "@/Pages/AddUser/AddUserPage";
 import Categories from "@/Pages/Categories/CategoriesPage";
+import ProductsPage from "@/Pages/Products/Products";
+import ProductTable from "@/Pages/Products/ProductsTable";
 import Users from "@/Pages/Users/UsersPage";
 import { MainPage } from "@/Pages/mainPage";
 
@@ -25,6 +27,16 @@ export const getMainRoutes = () => {
       path: "/products/new",
       Component: AddProductsPage,
       label: "Add Product",
+    },
+    {
+      path: "/products/table",
+      Component: ProductTable,
+      label: "Products",
+    },
+    {
+      path: "/products",
+      Component: ProductsPage,
+      label: "Products",
     },
   ];
 

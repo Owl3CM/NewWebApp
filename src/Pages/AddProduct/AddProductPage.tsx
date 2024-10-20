@@ -16,8 +16,8 @@ const AddProductsPage = () => {
           <IconInputController hive={formHive} id="name" />
           <IconInputController hive={formHive} id="description" />
           <IconInputController hive={formHive} id="image" />
-          <IconInputController hive={formHive} id="cost_price" />
-          <IconInputController hive={formHive} id="sale_price" />
+          <IconInputController type="number" hive={formHive} id="cost_price" />
+          <IconInputController type="number" hive={formHive} id="sale_price" />
           {/* TODO: fix this */}
           {/* <SelectorController hive={formHive} id="category_id" options={addProductService.categoriesHive.honey} /> */}
         </Grid>

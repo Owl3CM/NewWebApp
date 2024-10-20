@@ -17,11 +17,11 @@ export class AddProductService {
     this.formHive = createFormHive({
       initialValue: {
         category_id: null,
-        cost_price: null,
+        cost_price: 0,
         description: "",
         image: "",
         name: "",
-        sale_price: null,
+        sale_price: 0,
       },
       onSubmit: async (values) => {
         try {
