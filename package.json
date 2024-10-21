@@ -7,7 +7,7 @@
     "moon": "node node_modules/moon-style/dist/moon.js",
     "moon-purge": "node node_modules/moon-style/dist/purge.js",
     "build": "yarn moon-purge & vite build",
-    "dev": "start /B yarn moon && vite --host",
+    "dev": "nohup yarn moon > /dev/null 2>&1 & vite --host",
     "start": "yarn moon & vite --host",
     "serve": "yarn build && vite preview --host --port 2762",
     "icons": "node ./Scripts/Icons.mjs",
