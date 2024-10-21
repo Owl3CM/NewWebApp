@@ -8,6 +8,7 @@ const ar_Builder = {
     return `${GetLabel(key)}: ${GetLabel(value)}`;
   },
   maximumCharacters: (title: ILang, count: number) => `${GetLabel(title)} يجب ان لايتجاوز ال ${count} حرف`,
+  searchFor: (title: ILang) => `ابحث عن ${GetLabel(title)}`,
 };
 
 const arActions = {

@@ -2,11 +2,13 @@ import Moon from "@/Libs/moon-style";
 import { setDefaultStatusKit } from "../Libs/eze-services";
 import { StateKit } from "../Assets/stateKit";
 import Glob from "../Glob";
+import CartService from "@/Pages/Cart/CartService";
 
 export const AppInit = () => {
   setDefaultStatusKit(StateKit);
   Moon.init();
   Glob.Init();
+  CartService.init();
 };
 
 const ColorShadesGenerator = (baseHexColor: string, numShades: number) => {

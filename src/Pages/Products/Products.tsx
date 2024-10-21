@@ -24,7 +24,7 @@ const ProductsPage = () => {
                 product={honey}
                 i={i}
                 onClick={() => {
-                  cartService.addToCart(i);
+                  cartService.addToCart(honey);
                 }}
               />
             );

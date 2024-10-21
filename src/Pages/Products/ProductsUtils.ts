@@ -1,5 +1,5 @@
 import { CellBuilder, TableColumnDef } from "@/Table";
-import { FormattedProductsResponse } from "./ProductsService";
+import ProductsService, { FormattedProductsResponse } from "./ProductsService";
 import { CellBtnBuilder } from "./ProductsTable";
 import Client from "@/Client";
 import { Toast } from "eze-utils";
@@ -17,8 +17,7 @@ const ProductsUtils = {
         id: "remove_action",
         cell: (item) =>
           CellBtnBuilder("Remove", async () => {
-            await Client.productsTag.DeleteProduct({ id: item.id });
-            Toast.success({ title: "Product Deleted" });
+            ProductsService.RemoveProduct(item.id);
           }),
       },
       // { id: "category.name", cell: (item) => CellBuilder(item.category.name) },

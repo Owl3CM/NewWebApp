@@ -5,7 +5,7 @@ const Builder = new ClientBuilder({
   roots: {
     pos: "http://localhost:6969",
   },
-  storeKey: "Crafter",
+  // storeKey: "Crafter",
   api: ApiService.create({
     headers: {
       "Content-Type": "application/json",

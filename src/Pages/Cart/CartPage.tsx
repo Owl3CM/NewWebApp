@@ -1,7 +1,8 @@
 import { ArrayBee, Bee, Wrapper } from "eze-services";
-import CartService, { cartItemsHive } from "./CartService";
+import CartService from "./CartService";
 import { Button } from "@/Elements";
 import { Grid } from "@/Containers";
+import { JsonBuilder } from "eze-utils";
 
 const CartPage = () => {
   const cartService = CartService.Create();
@@ -10,12 +11,7 @@ const CartPage = () => {
     <Wrapper>
       <h1 className="text-center">Cart Page</h1>
       <Grid>
-        <ArrayBee
-          hive={cartItemsHive}
-          Component={({ honey, i }) => {
-            <div>{JSON.stringify(i)}</div>;
-          }}
-        />
+        <Bee hive={CartService.CartHive} Component={({ honey }) => <JsonBuilder json={honey.items} />} />
       </Grid>
     </Wrapper>
   );

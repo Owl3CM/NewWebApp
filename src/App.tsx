@@ -2,7 +2,8 @@ import { MainRoutes, getMainRoutes } from "@/Routes";
 import UnAuthRoutes from "./Routes/AuthRoutes";
 import { Icon } from "./Assets";
 import { ArrayBee, Bee, ObserverBee, Queryable } from "./Libs/eze-services";
-import { cartItemsHive } from "./Pages/Cart/CartService";
+import CartService, { cartItemsHive } from "./Pages/Cart/CartService";
+import { JsonBuilder } from "eze-utils";
 
 function App() {
   const { routes, routesGroups } = getMainRoutes();
@@ -18,7 +19,7 @@ function App() {
           }}
         />
         <Bee
-          hive={cartItemsHive}
+          hive={CartService.CartHive}
           Component={({ honey }) => {
             return (
               <div
@@ -26,7 +27,7 @@ function App() {
                 onClick={() => {
                   Queryable.navigate("/cart");
                 }}>
-                Cart ({honey.length})
+                Cart ({honey.items.length})
               </div>
             );
           }}

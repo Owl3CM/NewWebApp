@@ -50,6 +50,14 @@ const Table = ({ service, data, visibleColumns }) => {
         {service.showIndex
           ? data.map((item, i) => (
               <tr key={item.id}>
+                <td>
+                  <input
+                    type="checkbox"
+                    onChange={(e) => {
+                      service.toggleItemSelection(item);
+                    }}
+                  />
+                </td>
                 <td style={{ width: "40px" }}>{i + 1}</td>
                 {visibleColumns.map(({ id, cell, ...props }) => (
                   <Fragment key={id}>{cell(item, props)}</Fragment>

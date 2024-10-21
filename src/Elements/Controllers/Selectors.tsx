@@ -12,6 +12,7 @@ import {
   Selector,
   SelectorProps,
 } from "../Selectors";
+import { ControllerContainer } from "eze-services";
 
 export function SelectorController<T>(props: SelectorProps & IControllerProps<T>) {
   return <ILabeledController Element={Selector} {...props} />;
@@ -26,18 +27,18 @@ export function PaginatorSelectorMultiController<T, R>(props: PaginatorSelectorC
 }
 
 export function PaginatorSelectorController<T, R>({ hive, id, label = id as ILang, takeFullValue = true, ...props }: PaginatorSelectorControllerProps<T, R>) {
-  const _Hive = ((hive as IFormHive<T>).getNestedHive ? (hive as IFormHive<T>).getNestedHive(id) : hive) as INestedFormHive<T>;
   return (
-    <FormBee
-      hive={_Hive}
-      Component={({ honey, validate, error }) => {
+    <ControllerContainer
+      formHive={hive}
+      id={id}
+      Element={({ value, setValue, error }) => {
         return (
           <PaginatorSelector
             onChange={({ item, value }) => {
-              validate(takeFullValue ? item : value);
+              setValue(takeFullValue ? item : value);
             }}
             label={label}
-            value={honey}
+            value={value}
             error={error}
             id={id}
             {...props}

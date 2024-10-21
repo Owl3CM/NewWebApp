@@ -1,12 +1,21 @@
 import { QueryContainer } from "@/Containers";
 import { Table, TableWrapper } from "@/Table";
 import ProductsService from "./ProductsService";
+import { ObserverBee } from "eze-services";
 
 const ProductTable = () => {
   const service = ProductsService.Create();
   return (
     <TableWrapper>
-      <QueryContainer service={service} />
+      <>
+        <QueryContainer service={service} />
+        <ObserverBee
+          hive={service.selectedItemsHive}
+          Component={({ honey }) => {
+            return <div className="p-xl">{honey.length}</div>;
+          }}
+        />
+      </>
       <Table service={service} />
     </TableWrapper>
   );

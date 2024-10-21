@@ -5,6 +5,7 @@ import { BaseTable } from "./BaseTable";
 import { ITableService } from "./TableService";
 import { JsonBuilder } from "@/Libs/eze-utils";
 import { Wrapper } from "@/Containers";
+import { Bee, ObserverBee } from "eze-services";
 
 interface Props {
   service: ITableService;
@@ -31,6 +32,7 @@ export const Table = React.memo(({ service, children }: Props) => {
         }}
       />
       {children}
+
       <BaseTable service={service} />
     </Wrapper>
   );

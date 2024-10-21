@@ -1,4 +1,4 @@
-import { PaginatorService, Status as EzeStatus, createHive, PagenatedServiceConstructor, IHiveArray, IHive } from "@/Libs/eze-services";
+import { PaginatorService, Status as EzeStatus, createHive, PagenatedServiceConstructor, IHiveArray, IHive, createHiveArray } from "@/Libs/eze-services";
 import { CellBuilder } from "./CellBuilder/TableCellsBuilder";
 import { TableColumnDef } from "./Types";
 import { GetLabel, ILang } from "@/Language";
@@ -16,6 +16,13 @@ export class TableService<QueryParams, Response, FormattedResponse = Response, S
   id: string;
   viewTypeHive: IHive<ViewType>;
   // data = createHive([]);
+  selectedItemsHive = createHiveArray([]);
+
+  toggleItemSelection = (item: any) => {
+    if (this.selectedItemsHive.honey.some((_item) => item.id === _item.id)) {
+      this.selectedItemsHive.removeById(item.id);
+    } else this.selectedItemsHive.push(item);
+  };
 
   visibleColumns: TableColumnDef[];
   setVisibleColumns = (cols: TableColumnDef[]) => {
