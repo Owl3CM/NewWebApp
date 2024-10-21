@@ -25,7 +25,7 @@ export default class Queryable<T = any> {
     // SAVED[this.storageKey] = this.query || null;
     sessionStorage.setItem(this.storageKey, this.query);
     setTimeout(() => {
-      // this.navigate(`${window.location.pathname}?${this.query}`, { replace: true, preventScrollReset: true });
+      this.navigate(`${window.location.pathname}?${this.query}`, { replace: true, preventScrollReset: true });
       this.onQueryChange(this.getAll());
     }, 1);
     return;

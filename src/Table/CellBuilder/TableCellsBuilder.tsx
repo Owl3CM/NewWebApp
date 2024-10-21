@@ -31,6 +31,15 @@ export const CellTransactionsBuilder = (trans: any, props?: any) => (
 );
 
 export const CellBuilder = (val: any, props?: any) => <td {...props}>{val}</td>;
+export const CellBtnBuilder = (val: string, onClick: () => void, props?: any) => {
+  return (
+    <td {...props}>
+      <button onClick={onClick} className="bg-owl text-prim p-lg round-md">
+        {val}
+      </button>
+    </td>
+  );
+};
 export const CellBooleanBuilder = (val: any, props?: any) => <td {...props}>{GetLabel(val ? "yes" : "no")}</td>;
 export const CellPriceBuilder = (val: any, isoCode?: IsoCode, props?: any) => <td {...props}>{<Price isoCode={isoCode} price={val} />}</td>;
 export const CellLinkIconBuilder = ({ to, ...props }: IconLinkButtonProps) => (

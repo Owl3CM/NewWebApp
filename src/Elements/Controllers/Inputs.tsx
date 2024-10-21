@@ -15,9 +15,9 @@ export function TextAreaController<T>(props: IInputController<T>) {
 export function IconsInputController<T>(props: IInputController<T> & IconsInputProps) {
   return <ILabeledController Element={IconsInput} {...props} />;
 }
-export function PhoneController<T>(props: IInputController<T>) {
-  return <ILabeledController Element={IconInput} {...props} />;
-}
+// export function PhoneController<T>(props: IInputController<T>) {
+//   return <ILabeledController Element={IconInput} {...props} />;
+// }
 export function CheckBoxController<T>(props: IInputController<T>) {
   return <Controller Element={CheckBox} {...({ label: props.id, ...props } as any)} />;
 }

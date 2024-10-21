@@ -13,6 +13,7 @@ const ar_Builder = {
 const arActions = {
   addDiscounts: "اضافة خصم",
   makeAllAsSeen: "جعل الكل مقروء",
+  submit: "ارسال",
 };
 const ar_Enems = {};
 
@@ -20,7 +21,9 @@ const ar = {
   ...ar_permissions,
   ...ar_Enems,
   ...arActions,
+  name: "الاسم",
   item: "مادة",
+  age: "العمر",
   "": "",
 };
 

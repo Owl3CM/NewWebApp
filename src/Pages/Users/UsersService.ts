@@ -14,7 +14,12 @@ export default class UsersService extends TableService<PaginatorUsersQueryParams
       paginator: Client.usersTag.UsersPaginator,
       formatResponse: UsersUtils.formatResponse,
     });
-    Queryable.Reset({ service: this });
+    Queryable.Reset({
+      onQueryChange: (query) => {
+        console.log(query);
+        this.setQueryParams(query);
+      },
+    });
   }
   filters = [
     //

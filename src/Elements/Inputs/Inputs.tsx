@@ -5,7 +5,7 @@ import { Label } from "../Labels/Labels";
 import { LabeledElement } from "../ElementsContainers";
 import { Utils } from "@/Utils";
 
-export const NakedInput = ({
+export const BaseInput = ({
   id,
   label = id,
   setValue,
@@ -69,14 +69,12 @@ export const TextArea = ({
   />
 );
 
-export const Input = ({ label, className = "input", variant = "outline", setValue, ...props }: InputProps) => (
-  <NakedInput label={label} className={`${className}  input-${variant}`} {...props} />
-);
+export const Input = ({ label, className = "input", setValue, ...props }: InputProps) => <BaseInput label={label} className={className} {...props} />;
 
 export const InputLabel = ({ label, onClick, customLabel, error, containerClass, variant, className = "", onChange, ...props }: InputLabelProps) => (
   <div onClick={onClick} data-form-error={error} className={`icon-input ${containerClass} input-${variant}`}>
     <Label className="input-label" customLabel={customLabel} label={label} />
-    <NakedInput //
+    <BaseInput //
       label={label}
       onChange={onChange as any}
       {...props}
@@ -105,7 +103,7 @@ export const IconInput = ({
       data-icon-position={iconPosition}
       data-element-state={state}
       className={`icon-input ${containerClass} input-${variant}`}>
-      <NakedInput label={label} {...props} />
+      <BaseInput label={label} {...props} />
       <Icon icon={icon} className={iconClass} />
     </div>
   );
@@ -143,7 +141,7 @@ export const IconsInput = ({ startIcon, endIcon, containerClass, iconClassName, 
   return (
     <div data-form-error={error} className={`icon-input ${containerClass} input-${variant}`}>
       <Icon {...startIcon} />
-      <NakedInput {...props} />
+      <BaseInput {...props} />
       <Icon {...endIcon} />
     </div>
   );

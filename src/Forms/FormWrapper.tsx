@@ -3,6 +3,7 @@ import { Wrapper as Container, IWrapperProps } from "@/Libs/eze-services";
 interface Props extends IWrapperProps {
   "iso-code"?: string;
   style?: React.CSSProperties;
+  service?: any;
   [key: string]: any;
 }
 

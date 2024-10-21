@@ -1,4 +1,5 @@
 import AddUser from "@/Pages/AddUser/AddUserPage";
+import AddCategory from "@/Pages/AddCategory/AddCategoryPage";
 import Users from "@/Pages/Users/UsersPage";
 import { MainPage } from "@/Pages/mainPage";
 
@@ -8,6 +9,7 @@ export const getMainRoutes = () => {
     { path: "/", Component: MainPage, label: "System" },
     { path: "/users", Component: Users, label: "Users" },
     { path: "/users/new", Component: AddUser, label: "Add User" },
+    { path: "/categories/:id", Component: AddCategory, label: "Categories" },
   ];
 
   const groupByName = {};

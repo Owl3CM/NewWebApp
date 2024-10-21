@@ -1,6 +1,6 @@
 import { Form, Grid } from "@/Containers";
 import { IAddUserFormHive } from "../AddUserUtils";
-import { IconInputController, IconNumberController } from "@/Elements";
+import { IconInputController, IconNumberController, SelectorController } from "@/Elements";
 
 type Props = {
   formHive: IAddUserFormHive;
@@ -15,6 +15,15 @@ function AddUserLastStep({ formHive, prevStep }: Props) {
         <IconInputController hive={formHive} id="password" />
         <IconInputController hive={formHive} id="phone" />
         <IconNumberController hive={formHive} id="reference_id" />
+        <SelectorController
+          hive={formHive}
+          id="name"
+          options={[
+            { label: "One", value: 1 },
+            { label: "Two", value: 2 },
+            { label: "Three", value: 3 },
+          ]}
+        />
       </Grid>
     </Form>
   );
