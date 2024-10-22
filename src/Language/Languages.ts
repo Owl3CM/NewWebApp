@@ -16,6 +16,8 @@ const arActions = {
   makeAllAsSeen: "جعل الكل مقروء",
   submit: "ارسال",
   addToBasket: "اضافة الى السلة",
+  removeFromBasket: "ازالة من السلة",
+  addOrder: "اضافة طلب",
 };
 const ar_Enems = {};
 

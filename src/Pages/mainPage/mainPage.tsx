@@ -12,7 +12,7 @@ const mainPage = () => {
         <IconLink label="addProducts" to="/products/new" icon="category-outline" />
         <IconLink label="products table" to="/products/table" icon="category-outline" />
         <IconLink label="products" to="/products" icon="category-outline" />
-        <IconLink label="cart" to="/cart" icon="category-outline" />
+        <IconLink label="Orders" to="/orders" icon="category-outline" />
       </Grid>
     </Wrapper>
   );

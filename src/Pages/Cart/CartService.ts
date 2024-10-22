@@ -1,42 +1,44 @@
 import Client from "@/Client";
 import { createHive, createHiveArray } from "eze-services";
 
-export const cartItemsHive = createHiveArray([], "cart-items");
-export const cartIdHive = createHive<string | null>(localStorage.getItem("cartId"), "cart-id");
-
-const id = 1;
+const id = 4;
 class CartService {
+  static loaded = false;
   static CartHive = createHive({
-    items: [],
+    id,
+    items: [] as CartItemResponse[],
     items_quantity: 0,
     total_amount: 0,
     user_id: 1,
   });
 
+  private static initPromise: Promise<void> | null = null;
   static init = async () => {
-    let cart = await Client.cartsTag.CartById({ id });
-    if (!cart) {
-      cart = await Client.cartsTag.AddCart({
-        body: {
-          items: [],
-          items_quantity: 0,
-          total_amount: 0,
-          user_id: 1,
-        },
-      });
+    if (this.initPromise) {
+      return this.initPromise;
     }
 
-    this.CartHive.setHoney(cart);
-  };
-  public async addToCart(product) {
-    const cart = CartService.CartHive.honey;
-    await Client.cartsItemsTag.AddCartsItem({ body: { cart_id: cart.id, product_id: product.id } });
-    cart.items.push(product);
-    cart.items_quantity = cart.items.length;
-    this.syncCart();
-  }
+    this.initPromise = (async () => {
+      let cart = await Client.cartsTag.CartById({ id });
+      if (!cart) {
+        cart = await Client.cartsTag.AddCart({
+          body: {
+            items: [],
+            items_quantity: 0,
+            total_amount: 0,
+            user_id: 1,
+          },
+        });
+      }
 
-  public syncCart = async () => {
+      this.CartHive.setHoney(cart);
+      this.loaded = true;
+    })();
+
+    return this.initPromise;
+  };
+
+  static syncCart = async () => {
     CartService.CartHive.setHoney({ ...CartService.CartHive.honey });
   };
 

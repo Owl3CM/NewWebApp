@@ -3,10 +3,22 @@ import ProductsService, { FormattedProductsResponse } from "./ProductsService";
 import { CellBtnBuilder } from "./ProductsTable";
 import Client from "@/Client";
 import { Toast } from "eze-utils";
+import CartService from "../Cart/CartService";
 
 const ProductsUtils = {
-  formatResponse(data: ProductResponse[]) {
-    return data as any as FormattedProductsResponse[];
+  async formatResponse(data: FormattedProductsResponse[]) {
+    await CartService.init();
+
+    const cartItems = CartService.CartHive.honey.items;
+
+    cartItems.forEach((item) => {
+      const product = data.find((product) => item.product_id === product.id);
+      if (product) {
+        product.item = item;
+      }
+    });
+
+    return data;
   },
   tableColumns() {
     const headers: TableColumnDef<FormattedProductsResponse>[] = [
@@ -20,7 +32,6 @@ const ProductsUtils = {
             ProductsService.RemoveProduct(item.id);
           }),
       },
-      // { id: "category.name", cell: (item) => CellBuilder(item.category.name) },
     ];
 
     return headers.filter((tc) => tc !== null);
