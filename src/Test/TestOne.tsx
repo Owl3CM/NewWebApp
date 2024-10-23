@@ -29,7 +29,8 @@ const formHive = createFormHive({
   //     }
   //   }
   // },
-  validateMode: "onChange",
+  // validateMode: "onChange",
+  validateMode: "onBlur",
   getValidator: (formHive) => {
     const ageValidator = MyVee.Create("age")
       .number()

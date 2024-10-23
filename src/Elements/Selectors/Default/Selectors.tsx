@@ -41,6 +41,7 @@ const SelectorButton =
   ({ selected, options, toggleList }) =>
     (
       <IconButton
+        tabIndex={1}
         error={error}
         onClick={({ e: { currentTarget } }) => {
           toggleList({ container: hasParent ? currentTarget.parentElement : currentTarget });

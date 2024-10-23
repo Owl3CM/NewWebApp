@@ -121,7 +121,7 @@ export const SelectorBase = ({
 
 const DefaultBuilder = ({ selected, toggleList }: ISelectorBuilder) => {
   return (
-    <div onClick={({ currentTarget }) => toggleList({ container: currentTarget })} className={`form-selector ${selected.className || ""}`}>
+    <div tabIndex={1} onClick={({ currentTarget }) => toggleList({ container: currentTarget })} className={`form-selector ${selected.className || ""}`}>
       <p className="selector-label">{selected.label}</p>
     </div>
   );

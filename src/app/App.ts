@@ -1,7 +1,8 @@
+import { ILang } from "@/Language";
 import { Toast } from "@/Libs/eze-utils";
 
 export default class AppErrors {
-  static ShowError(content = "", title = "error") {
+  static ShowError(content: ILang = "", title = "error") {
     Toast.error({ title, content });
   }
   static BackendError(error: any, title = "error") {
